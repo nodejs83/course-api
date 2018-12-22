@@ -9,25 +9,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class TopicsService {
 	
-	
 	private static List<Topic> list = null;
 
-
 	static {
-		
-	list = new ArrayList<>(Arrays.asList(
-				new Topic(1, "topic1", "description1"),
-				new Topic(2, "topic2", "description2"),
-				new Topic(3, "topic3", "description3"),
-				new Topic(4, "topic4", "description4")
-				));
+		list = new ArrayList<>(Arrays.asList(
+					new Topic(1, "topic1", "description1"),
+					new Topic(2, "topic2", "description2"),
+					new Topic(3, "topic3", "description3"),
+					new Topic(4, "topic4", "description4")
+					));
 	}
-	
 	
 	public Topic getTopic(Integer id) {
 		return getMockData().stream().filter(t -> t.getId().equals(id)).findFirst().get();
 	}
-	
 	
 	public List<Topic> getAllTopics(){
 		return getMockData();
@@ -36,7 +31,6 @@ public class TopicsService {
 	private List<Topic> getMockData() {
 		return list;
 	}
-
 
 	public void addTopic(Topic topic) {
 		list.add(topic);
