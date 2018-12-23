@@ -36,4 +36,15 @@ public class TopicsService {
 		list.add(topic);
 	}
 
+	public void updateTopic(Topic topic, Integer id) {
+		Topic t = getTopic(id);
+		t.setId(topic.getId());
+		t.setName(topic.getName());
+		t.setDescription(topic.getDescription());
+	}
+
+	public void deleteTopic(Integer id) {
+		getMockData().remove(getTopic(id));
+	}
+
 }
